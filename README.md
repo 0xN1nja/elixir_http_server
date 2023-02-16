@@ -1,8 +1,11 @@
 # ElixirHttpServer
 
-**TODO: Add description**
+# Usage
+```bash
+mix run lib/elixir_http_server 9999
+```
 
-## Installation
+# Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `elixir_http_server` to your list of dependencies in `mix.exs`:
