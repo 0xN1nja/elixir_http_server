@@ -3,5 +3,5 @@
 
 # Usage
 ```bash
-mix run lib/elixir_http_server <port>
+PORT=<port> mix run
 ```

@@ -1,12 +1,8 @@
 defmodule ElixirHttpServer do
 
   def main do
-    {:ok, port} =
-      case System.argv do
-       [port_string] -> {:ok, String.to_integer(port_string)}
-       not_a_port -> {:error, {:invalid_port, not_a_port}}
-      end
-    start(port)
+    port=System.get_env("PORT")
+    start(String.to_integer(port))
   end
 
   def start(port) do
