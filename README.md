@@ -3,5 +3,5 @@
 
 # Usage
 ```bash
-PORT=<port> mix run
+$ PORT=<port> mix run -e "ElixirHttpServer.main()"
 ```

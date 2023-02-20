@@ -5,18 +5,18 @@ defmodule ElixirHttpServer do
     start(String.to_integer(port))
   end
 
-  def start(port) do
+  defp start(port) do
     {:ok, socket} = :gen_tcp.listen(port, [:binary, {:active, true}, {:reuseaddr, true}])
     IO.puts("Server Listening On http://localhost:#{port}/")
-    _accept(socket)
+    accept(socket)
   end
 
-  defp _accept(socket) do
+  defp accept(socket) do
     {:ok, client} = :gen_tcp.accept(socket)
     spawn(fn ->
       handle_connection(client)
     end)
-    _accept(socket)
+    accept(socket)
   end
 
   defp handle_connection(client) do
@@ -28,5 +28,3 @@ defmodule ElixirHttpServer do
     :gen_tcp.send(client, msg)
   end
 end
-
-ElixirHttpServer.main()
